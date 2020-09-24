@@ -15,9 +15,7 @@ namespace Chapter3
                 "Tokyo","New Delhi","Bangkok","London","Paris","Berlin","Canberra","Hong Kong"
             };
 
-            list.ForEach(s => Console.WriteLine(s));
-
-            //list.FindAll(s => s.Length <= 5);
+            list.ConvertAll(s => s.ToUpper()).ForEach(s => Console.WriteLine(s));
         }
     }
 }
