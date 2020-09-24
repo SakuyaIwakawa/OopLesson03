@@ -8,24 +8,15 @@ namespace Chapter3
 {
     class Program
     {
-        public delegate bool Judgement(int value);
-
         static void Main(string[] args)
         {
-            var numbers = new[] { 5, 3, 9, 6, 7, 5, 8, 1, 0, 5, 10, 4 };
-            int count = Count(numbers, delegate (int n) { return (n >= 5); });
-            Console.WriteLine($"{count}");
-        }
-
-        public static int Count(int[] numbers,Judgement judge)
-        {
-            int count = 0;
-            foreach(var n in numbers)
+            var list = new List<string>
             {
-                if (judge(n) == true)
-                    count++;
-            }
-            return count;
+                "Tokyo","New Delhi","Bangkok","London","Paris","Berlin","Canberra","Hong Kong"
+            };
+
+            var name = list.Find(s => s.Length == 6);
+            Console.WriteLine(name);
         }
     }
 }
